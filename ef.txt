@@ -1,0 +1,75 @@
+Entiry Framework
+
+is Object relational mapping Framework.
+It automatically creates classes based on database tables and the vice versa 
+it automatically generates SQL script to create database on classes.
+
+EF approaches
+Schema First
+Model First 
+Code First
+ 
+Schema First-------------
+Add ADO.NET Entity Data Model
+Select Generate from Database option
+Configure Database connection string
+Select tables,views and procedures
+Above process will create EntityNameModel.edmx file which contains -
+Selected databases as classes
+Factory methods
+Primitive Properties
+Navigation Properties
+
+In webform,
+Drag and drop EntityDatasource.
+Configure Entity Model database
+
+
+
+Model Firsr-------------
+First we create entity model
+Create entities
+Create relationships between entities
+Inheritance / hierarichies - add navigation property
+
+
+Right Click on entity model to add entity
+Add scalar properties
+To Add navigation properties -
+right click on model and select Add -> Association
+"Generate Database from Model" option is used to create database in backend
+
+
+
+Code First---------------------
+
+Write entities by declaring classes
+create modeldbcontext class which inherits from DBContext
+declare Dbset<entity> properties inside it
+Declare repository class to select,add,update,delete tha data
+
+In webform,
+we need to add objectDataSource
+And configure it by provinding repository method
+
+To specify key attribute such as table name, Foreign key name,Column name
+we need to import System.ComponentModel.DataAnnotations.Schema 
+
+
+----------------------------------------------------
+
+In EF, if model changes after database creation then DBContext will through an error.
+To resync model with database -
+Add global.asax file
+Register Application_start event
+register SetInitializer property of database
+
+
+
+How to seed data -
+
+
+Right click on Entities
+select map stored procedure option
+
+
